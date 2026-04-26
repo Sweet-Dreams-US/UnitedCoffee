@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Visit — United Coffee | 6447 W Jefferson, Fort Wayne</title>
+<meta name="description" content="Hours, directions, parking, and contact for United Coffee in Fort Wayne. Open daily on West Jefferson Boulevard." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/globals.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F6EFE3'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='Anton,Impact' font-size='80' fill='%23B8362F'%3EU%3C/text%3E%3C/svg%3E" />
+<style>
+  .form-success {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .6s var(--ease-out), transform .6s var(--ease-out);
+    pointer-events: none;
+  }
+  .form-success.show { opacity: 1; transform: none; pointer-events: auto; }
+  .map-frame {
+    border: 1px solid var(--border-strong);
+    aspect-ratio: 16/10;
+    width: 100%;
+    background: var(--bg-2);
+    overflow: hidden;
+  }
+  .map-frame iframe { width: 100%; height: 100%; border: 0; filter: sepia(0.15) saturate(0.9); }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">UNITED</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="menu.html" class="nav-link">Menu</a>
+    <a href="story.html" class="nav-link">Story</a>
+    <a href="visit.html" class="nav-link" aria-current="page">Visit</a>
+  </div>
+  <a href="tel:+12603995148" class="nav-cta">(260) 399-5148 <span aria-hidden="true">→</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <span class="eyebrow" data-reveal>Section 04 — Vieni a Trovarci</span>
+    <h1 class="h-mega mt-4" data-reveal data-delay="1">Come <br /><span class="editorial text-crema-deep">find us.</span></h1>
+    <p class="lead mt-6" data-reveal data-delay="2" style="max-width: 65ch;">
+      We're on West Jefferson, right between the bagel place and the bookstore. Free parking out front. Patio open in season.
+    </p>
+  </div>
+</header>
+
+<!-- ADDRESS / HOURS / CONTACT GRID -->
+<section class="section section-tight">
+  <div class="wrap">
+    <div class="grid grid-3" style="gap: var(--s-5);">
+      <div class="card bracket" data-reveal>
+        <div class="mono text-rosso">Address</div>
+        <p class="mt-4" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.6rem; line-height: 1.3;">
+          6447 W Jefferson Blvd<br />Fort Wayne, IN 46804
+        </p>
+        <div class="mt-6">
+          <a href="https://maps.google.com/?q=6447+W+Jefferson+Blvd+Fort+Wayne+IN" target="_blank" rel="noopener" class="btn btn-arrow" style="padding: 0.7rem 1.1rem;">Get Directions</a>
+        </div>
+      </div>
+
+      <div class="card bracket" data-reveal data-delay="1">
+        <div class="mono text-rosso">Hours</div>
+        <ul class="mt-4 mono" style="font-size: 0.85rem; line-height: 2.1; letter-spacing: 0.14em;">
+          <li>MON · 6:30A — 6P</li>
+          <li>TUE · 6:30A — 6P</li>
+          <li>WED · 6:30A — 6P</li>
+          <li>THU · 6:30A — 6P</li>
+          <li>FRI · 6:30A — 6P</li>
+          <li>SAT · 7A — 5P</li>
+          <li>SUN · 8A — 3P</li>
+        </ul>
+      </div>
+
+      <div class="card bracket" data-reveal data-delay="2">
+        <div class="mono text-rosso">Contact</div>
+        <p class="mt-4" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.6rem; line-height: 1.4;">
+          (260) 399-5148<br />
+          <a href="mailto:hello@unitedcoffee.com" style="border-bottom: 1px solid var(--border-strong);">hello@unitedcoffee.com</a>
+        </p>
+        <div class="mt-6 flex gap-4">
+          <a href="https://instagram.com/united.coffee" target="_blank" rel="noopener" class="mono" style="color: var(--rosso); border-bottom: 1px solid var(--rosso); padding-bottom: 2px;">Instagram</a>
+          <a href="https://www.facebook.com/unitedcoffee.fw/" target="_blank" rel="noopener" class="mono" style="color: var(--rosso); border-bottom: 1px solid var(--rosso); padding-bottom: 2px;">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP + WHAT TO EXPECT -->
+<section class="section" style="background: var(--bg-1); border-block: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="grid-12" style="gap: var(--gutter); align-items: start;">
+      <div style="grid-column: 1 / span 7;" data-reveal>
+        <div class="map-frame">
+          <iframe
+            src="https://www.google.com/maps?q=6447+W+Jefferson+Blvd+Fort+Wayne+IN&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="United Coffee on Google Maps">
+          </iframe>
+        </div>
+      </div>
+      <div style="grid-column: 8 / -1;">
+        <span class="eyebrow" data-reveal>What to Expect</span>
+        <h2 class="h-2 mt-4" data-reveal data-delay="1">A small <span class="editorial text-crema-deep">room.</span></h2>
+        <ul class="mt-6" style="display: flex; flex-direction: column; gap: var(--s-4);">
+          <li data-reveal data-delay="1" style="display: flex; gap: var(--s-4); padding-bottom: var(--s-4); border-bottom: 1px dashed var(--border);">
+            <span class="mono text-rosso" style="min-width: 30px;">/01</span>
+            <span class="text-soft">~28 seats inside, 12 on the patio</span>
+          </li>
+          <li data-reveal data-delay="2" style="display: flex; gap: var(--s-4); padding-bottom: var(--s-4); border-bottom: 1px dashed var(--border);">
+            <span class="mono text-rosso" style="min-width: 30px;">/02</span>
+            <span class="text-soft">Free Wi-Fi · plenty of outlets</span>
+          </li>
+          <li data-reveal data-delay="3" style="display: flex; gap: var(--s-4); padding-bottom: var(--s-4); border-bottom: 1px dashed var(--border);">
+            <span class="mono text-rosso" style="min-width: 30px;">/03</span>
+            <span class="text-soft">Free parking out front + side lot</span>
+          </li>
+          <li data-reveal data-delay="4" style="display: flex; gap: var(--s-4); padding-bottom: var(--s-4); border-bottom: 1px dashed var(--border);">
+            <span class="mono text-rosso" style="min-width: 30px;">/04</span>
+            <span class="text-soft">Curbside pickup available</span>
+          </li>
+          <li data-reveal data-delay="5" style="display: flex; gap: var(--s-4); padding-bottom: var(--s-4); border-bottom: 1px dashed var(--border);">
+            <span class="mono text-rosso" style="min-width: 30px;">/05</span>
+            <span class="text-soft">Dog-friendly outside</span>
+          </li>
+          <li data-reveal data-delay="5" style="display: flex; gap: var(--s-4); padding-bottom: var(--s-4);">
+            <span class="mono text-rosso" style="min-width: 30px;">/06</span>
+            <span class="text-soft">Wheelchair accessible</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section">
+  <div class="wrap">
+    <div class="grid-12" style="gap: var(--gutter);">
+      <div style="grid-column: 1 / span 5;" data-reveal>
+        <span class="eyebrow">Send a Message</span>
+        <h2 class="h-1 mt-4">Got a <br /><span class="editorial text-crema-deep">question?</span></h2>
+        <p class="lead mt-6" style="line-height: 1.6;">
+          Catering, private events, large pickup orders, lost umbrellas — anything. Tony or Marina will get back to you, usually same day.
+        </p>
+        <div class="mt-8" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.4rem; color: var(--text-soft);">
+          Or just call.<br /><span class="text-espresso" style="font-style: normal; font-family: var(--font-display); font-size: 1.5em; letter-spacing: 0.01em;">(260) 399-5148</span>
+        </div>
+      </div>
+      <div style="grid-column: 7 / -1;" class="form-wrap" data-reveal data-delay="1">
+        <form data-demo style="display: flex; flex-direction: column; gap: var(--s-6);">
+          <div class="form-group">
+            <label class="label" for="name">Your Name</label>
+            <input class="input" id="name" name="name" type="text" placeholder="Maria Rossi" required />
+          </div>
+          <div class="form-group">
+            <label class="label" for="email">Email</label>
+            <input class="input" id="email" name="email" type="email" placeholder="maria@example.com" required />
+          </div>
+          <div class="form-group">
+            <label class="label" for="topic">Topic</label>
+            <input class="input" id="topic" name="topic" type="text" placeholder="Catering / Event / Question" />
+          </div>
+          <div class="form-group">
+            <label class="label" for="msg">Message</label>
+            <textarea class="textarea" id="msg" name="message" rows="5" placeholder="Tell us a bit about what you need..." required></textarea>
+          </div>
+          <div class="mt-4">
+            <button type="submit" class="btn btn-primary btn-arrow">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATERING TEASE -->
+<section class="section" style="background: var(--bg-2); border-block: 1px solid var(--border);">
+  <div class="wrap center">
+    <span class="eyebrow" data-reveal>Catering &amp; Events</span>
+    <h2 class="h-1 mt-6" data-reveal data-delay="1">
+      Bring <span class="editorial text-crema-deep">United</span> to you.
+    </h2>
+    <p class="lead mt-6" style="margin-inline: auto;" data-reveal data-delay="2">
+      Office breakfasts, weddings, conferences, baby showers, weekend brunches. We bring traveling espresso bars, waffle stations, and pastry boxes anywhere within an hour of Fort Wayne.
+    </p>
+    <div class="grid grid-3 mt-8" style="gap: var(--s-5); text-align: left;">
+      <div class="card" data-reveal>
+        <div class="mono text-rosso">Espresso Bar</div>
+        <p class="mt-3" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.3rem;">A barista, a machine, your guests.</p>
+        <p class="text-soft mt-4">Mobile espresso bar with a barista, milk steaming, and Danesi beans. 2-hour minimum.</p>
+      </div>
+      <div class="card" data-reveal data-delay="1">
+        <div class="mono text-rosso">Waffle Station</div>
+        <p class="mt-3" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.3rem;">Hot, fresh, made to order.</p>
+        <p class="text-soft mt-4">Liège waffles ironed on-site with a topping bar. Built for brunches and breakfast events.</p>
+      </div>
+      <div class="card" data-reveal data-delay="2">
+        <div class="mono text-rosso">Pastry Boxes</div>
+        <p class="mt-3" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.3rem;">A dozen of everything.</p>
+        <p class="text-soft mt-4">Cornetti, biscotti, sfogliatelle, mini tiramisù. Pre-ordered for office mornings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">United<span class="text-rosso">.</span></div>
+    <div class="footer-grid mt-8">
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <p style="line-height:1.6;">
+          6447 W Jefferson Blvd<br />
+          Fort Wayne, IN 46804<br />
+          <span class="mono mt-3" style="display:inline-block; color: var(--text-faint);">(260) 399-5148</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Order</h4>
+        <ul>
+          <li><a href="visit.html">In-Store Pickup</a></li>
+          <li><a href="visit.html">Curbside</a></li>
+          <li><a href="visit.html">Catering Inquiry</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://instagram.com/united.coffee" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/unitedcoffee.fw/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="mailto:hello@unitedcoffee.com">hello@unitedcoffee.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> United Coffee · Fort Wayne, Indiana</span>
+      <span>Site by <a href="https://sweetdreamsmusic.com" target="_blank" rel="noopener">Sweet Dreams Studios</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/main.js" defer></script>
+</body>
+</html>
