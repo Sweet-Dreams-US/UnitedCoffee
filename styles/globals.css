@@ -840,6 +840,109 @@ h1, h2, h3, h4 { font-weight: 400; }
 .flag-ribbon span:nth-child(3) { background: var(--rosso); }
 
 /* ==========================================================================
+   SECTION COLOR VARIANTS
+   Drop-in dark espresso + Italian-rosso sections that re-scope the design
+   tokens so all child components (eyebrow, h-2, .lead, .card, .menu-row, .pillar)
+   render correctly on the new background without per-element overrides.
+   ========================================================================== */
+
+/* ---------- Espresso (dark coffee) ---------- */
+.section-espresso {
+  background: var(--espresso);
+  color: var(--cream);
+  /* Re-scope tokens so descendants pick warm cream tones */
+  --text: var(--cream);
+  --text-soft: rgba(255, 250, 241, 0.78);
+  --text-dim: rgba(255, 250, 241, 0.55);
+  --text-faint: rgba(255, 250, 241, 0.32);
+  --border: rgba(255, 250, 241, 0.12);
+  --border-strong: rgba(255, 250, 241, 0.25);
+  --bg: var(--espresso);
+  --bg-1: var(--espresso-2);
+  --bg-2: #46322A;
+  --surface: rgba(255, 250, 241, 0.04);
+  --surface-2: rgba(255, 250, 241, 0.07);
+  border-block: 1px solid rgba(255, 250, 241, 0.08);
+}
+.section-espresso .editorial,
+.section-espresso .text-crema-deep { color: var(--crema) !important; }
+.section-espresso .text-rosso { color: #FF6B5B; } /* slightly brighter on dark */
+.section-espresso .eyebrow::before { background: var(--crema); }
+.section-espresso .menu-row-price { color: var(--crema); }
+.section-espresso .menu-add {
+  background: rgba(255, 250, 241, 0.06);
+  color: var(--cream);
+  border-color: rgba(255, 250, 241, 0.3);
+}
+.section-espresso .menu-add:hover {
+  background: var(--rosso);
+  color: var(--cream);
+  border-color: var(--rosso);
+}
+.section-espresso .btn-primary {
+  background: var(--cream);
+  color: var(--espresso);
+  border-color: var(--cream);
+}
+.section-espresso .btn-primary::before { background: var(--rosso); }
+.section-espresso .btn-primary:hover { color: var(--cream); border-color: var(--rosso); }
+.section-espresso .card {
+  background: rgba(255, 250, 241, 0.04);
+  border-color: rgba(255, 250, 241, 0.18);
+}
+.section-espresso .card:hover { border-color: rgba(255, 250, 241, 0.35); }
+
+/* ---------- Rosso (Italian red) ---------- */
+.section-rosso {
+  background: var(--rosso);
+  color: var(--cream);
+  --text: var(--cream);
+  --text-soft: rgba(255, 250, 241, 0.85);
+  --text-dim: rgba(255, 250, 241, 0.65);
+  --text-faint: rgba(255, 250, 241, 0.4);
+  --border: rgba(255, 250, 241, 0.18);
+  --border-strong: rgba(255, 250, 241, 0.35);
+  --bg: var(--rosso);
+  --bg-1: var(--rosso-deep);
+  --surface: rgba(255, 250, 241, 0.06);
+  --surface-2: rgba(255, 250, 241, 0.1);
+  border-block: 1px solid rgba(255, 250, 241, 0.12);
+}
+.section-rosso .editorial,
+.section-rosso .text-crema-deep { color: var(--cream) !important; font-style: italic; }
+.section-rosso .text-rosso { color: var(--cream); }
+.section-rosso .eyebrow::before { background: var(--cream); }
+.section-rosso .menu-row-price { color: var(--cream); border: 1px solid var(--cream); padding: 4px 8px; font-size: 0.7rem; }
+.section-rosso .menu-row { border-color: rgba(255, 250, 241, 0.22); }
+.section-rosso .menu-add {
+  background: var(--cream);
+  color: var(--rosso);
+  border-color: var(--cream);
+}
+.section-rosso .menu-add:hover {
+  background: var(--espresso);
+  color: var(--cream);
+  border-color: var(--espresso);
+}
+.section-rosso .btn-primary {
+  background: var(--cream);
+  color: var(--rosso);
+  border-color: var(--cream);
+}
+.section-rosso .btn-primary::before { background: var(--espresso); }
+.section-rosso .btn-primary:hover { color: var(--cream); border-color: var(--espresso); }
+.section-rosso .card {
+  background: rgba(255, 250, 241, 0.08);
+  border-color: rgba(255, 250, 241, 0.25);
+}
+.section-rosso .card:hover { border-color: var(--cream); }
+.section-rosso .quote-card { border-left-color: rgba(255, 250, 241, 0.4); }
+
+/* Tighter inner-page hero — less giant top padding so first real content
+   shows in viewport sooner */
+.page-header { padding: clamp(7rem, 11vw, 9.5rem) 0 var(--s-7); }
+
+/* ==========================================================================
    ORDERING SYSTEM
    Cart FAB + Drawer · Customize sheet · Order checkout
    Adapted from MochaLounge — ported to United's editorial cream/espresso
