@@ -260,6 +260,34 @@
   </div>
 </footer>
 
+<!-- Cart FAB -->
+<button class="cart-fab" id="cartFab" aria-label="View your order">
+  <span>BAG</span>
+  <span class="cart-fab-count" id="cartFabCount">0</span>
+</button>
+
+<!-- Cart overlay + drawer -->
+<div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Your order" role="dialog">
+  <div class="cart-header">
+    <div>
+      <div class="cart-title">Your order</div>
+      <div style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.25rem;">Pickup · ready in 15–20 min</div>
+    </div>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer" id="cartFooter">
+    <div class="cart-total">
+      <span class="cart-total-label">Subtotal</span>
+      <span class="cart-total-amount" id="cartTotal">$0.00</span>
+    </div>
+    <a href="order.html" class="btn btn-primary btn-arrow" style="width: 100%; justify-content: center;">Checkout</a>
+    <p class="cart-note">Demo only · prices are illustrative · pay at pickup</p>
+  </div>
+</aside>
+
 <script src="scripts/main.js" defer></script>
+<script src="scripts/cart.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Order — United Coffee | Fort Wayne</title>
+<meta name="description" content="Review your order and check out for pickup at United Coffee. 6447 W Jefferson Blvd, Fort Wayne." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/globals.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F6EFE3'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='Anton,Impact' font-size='80' fill='%23B8362F'%3EU%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-brand">UNITED</a>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="menu.html" class="nav-link">Menu</a>
+    <a href="story.html" class="nav-link">Story</a>
+    <a href="visit.html" class="nav-link">Visit</a>
+  </div>
+  <a href="menu.html" class="nav-cta">Add More <span aria-hidden="true">→</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- CHECKOUT SHELL -->
+<div id="checkoutShell">
+  <header class="page-header" style="padding-bottom: var(--s-7);">
+    <div class="wrap">
+      <span class="eyebrow fade-up">— Checkout —</span>
+      <h1 class="display mt-4 fade-up" style="animation-delay: 0.15s; font-size: clamp(3rem, 9vw, 8rem);">
+        Review your <span class="editorial text-crema-deep">order.</span>
+      </h1>
+      <p class="lead mt-5 fade-up" style="animation-delay: 0.3s; max-width: 60ch;">
+        Choose how you'd like to grab it, pick a time, and we'll have it ready when you walk in. Demo checkout — no card is charged.
+      </p>
+    </div>
+  </header>
+
+  <section class="section" style="padding-top: 1rem;">
+    <div class="wrap">
+      <form id="orderForm" class="checkout-grid">
+        <!-- LEFT: Order summary + method + customer + payment -->
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+          <div class="checkout-panel" data-reveal>
+            <h3 class="h-3" style="margin-bottom: 1.25rem;">Your <span class="editorial text-crema-deep">items.</span></h3>
+            <div id="orderSummary"></div>
+            <div style="display: flex; justify-content: space-between; padding-top: 1rem; margin-top: 1rem; border-top: 1px dashed var(--border-strong); font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim);">
+              <span>Subtotal</span><span id="orderSubtotal">$0.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding-top: 0.4rem; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-dim);">
+              <span>Tax (7%)</span><span id="orderTax">$0.00</span>
+            </div>
+            <div class="summary-total">
+              <span class="label">Total</span>
+              <span class="amount" id="orderTotal">$0.00</span>
+            </div>
+          </div>
+
+          <div class="checkout-panel" data-reveal data-delay="1">
+            <h3 class="h-3" style="margin-bottom: 0.5rem;">Pickup at <span class="editorial text-crema-deep">United.</span></h3>
+            <p class="text-soft" style="font-size: 0.95rem; margin-bottom: 1.25rem; font-family: var(--font-editorial); font-style: italic;">
+              6447 W Jefferson Blvd · Fort Wayne, IN 46804
+            </p>
+
+            <h4 class="mono" style="color: var(--text-dim); margin-bottom: 0.6rem;">How would you like it?</h4>
+            <div class="location-pick">
+              <label>
+                <input type="radio" name="method" value="in-person" checked />
+                <span class="location-pick-name">In-person</span>
+                <span class="location-pick-detail">Walk in · grab from the counter</span>
+              </label>
+              <label>
+                <input type="radio" name="method" value="curbside" />
+                <span class="location-pick-name">Curbside</span>
+                <span class="location-pick-detail">Pull up out front · we bring it to your car</span>
+              </label>
+            </div>
+
+            <h4 class="mono" style="color: var(--text-dim); margin: 2rem 0 0.6rem;">When?</h4>
+            <div class="field" style="gap: 0.6rem;">
+              <label for="pickup-time">Today's slots · 10-minute windows</label>
+              <select id="pickup-time" name="time" required></select>
+            </div>
+            <p style="font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); margin-top: 0.6rem;" id="hoursNote">Open today · 6:30a — 6p</p>
+          </div>
+
+          <div class="checkout-panel" data-reveal data-delay="2">
+            <h3 class="h-3" style="margin-bottom: 1.25rem;">Your <span class="editorial text-crema-deep">info.</span></h3>
+            <div class="grid grid-2" style="gap: 1rem;">
+              <div class="field">
+                <label for="cust-name">Name</label>
+                <input id="cust-name" name="name" type="text" required placeholder="Maria Rossi" />
+              </div>
+              <div class="field">
+                <label for="cust-phone">Phone</label>
+                <input id="cust-phone" name="phone" type="tel" required placeholder="(260) 555-0199" />
+              </div>
+              <div class="field" style="grid-column: 1 / -1;">
+                <label for="cust-email">Email (for receipt)</label>
+                <input id="cust-email" name="email" type="email" required placeholder="you@example.com" />
+              </div>
+            </div>
+          </div>
+
+          <div class="checkout-panel fake-card" data-reveal data-delay="3">
+            <h3 class="h-3" style="margin-bottom: 0.5rem; color: var(--bg);">Payment</h3>
+            <p style="color: rgba(246,239,227,0.7); font-size: 0.85rem; margin-bottom: 1.25rem;">Live site will use Square — secure card capture, Apple Pay, Google Pay.</p>
+            <div class="field">
+              <label for="card-num">Card number</label>
+              <input id="card-num" type="text" placeholder="4242 4242 4242 4242" autocomplete="off" />
+            </div>
+            <div class="fake-card-row">
+              <div class="field">
+                <label for="card-name">Name on card</label>
+                <input id="card-name" type="text" placeholder="As it appears" autocomplete="off" />
+              </div>
+              <div class="field">
+                <label for="card-exp">Expires</label>
+                <input id="card-exp" type="text" placeholder="MM/YY" autocomplete="off" />
+              </div>
+              <div class="field">
+                <label for="card-cvc">CVC</label>
+                <input id="card-cvc" type="text" placeholder="123" autocomplete="off" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Sticky place-order summary -->
+        <div data-reveal data-delay="2">
+          <div class="checkout-panel" style="position: sticky; top: 6rem;">
+            <h3 class="h-3" style="margin-bottom: 1.25rem;">Pronto a <span class="editorial text-crema-deep">partire.</span></h3>
+            <p class="mono" style="color: var(--text-faint); margin-bottom: 1.25rem;">— Ready to go —</p>
+            <div style="font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-dim); line-height: 2;">
+              <div style="display: flex; justify-content: space-between;"><span>Pickup</span><span style="color: var(--text);">~15 min</span></div>
+              <div style="display: flex; justify-content: space-between;"><span>Where</span><span style="color: var(--text);">United Coffee</span></div>
+              <div style="display: flex; justify-content: space-between;"><span>Total</span><span style="color: var(--rosso); font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0;" id="orderTotal-mirror">$0.00</span></div>
+            </div>
+            <button id="placeOrder" type="submit" class="btn btn-primary btn-arrow" style="width: 100%; justify-content: center; margin-top: 1.5rem;">
+              Place Order
+            </button>
+            <p class="cart-note" style="margin-top: 1rem;">Demo · no card will be charged · no order will be sent</p>
+            <div class="divider" style="margin-block: 1.5rem;"></div>
+            <p style="font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-faint); line-height: 1.7;">
+              When live, this routes through Square's hosted checkout — PCI compliant, with the same flow as the in-store register.
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
+
+<!-- SUCCESS SHELL (hidden by default) -->
+<div id="successShell" style="display: none;">
+  <section class="section" style="padding-top: 9rem;">
+    <div class="wrap order-success">
+      <div class="check-mark">✓</div>
+      <span class="eyebrow">— Grazie Mille —</span>
+      <h1 class="display mt-5" style="font-size: clamp(3rem, 7vw, 6rem);">
+        See you in a <span class="editorial text-crema-deep">few minutes.</span>
+      </h1>
+      <p class="lead mt-5" style="margin-inline: auto;">
+        We'll have everything ready when you walk in or pull up. Show your name at the counter — espresso's on the bar.
+      </p>
+
+      <div class="checkout-panel" style="max-width: 540px; margin: 3rem auto 0; text-align: left;">
+        <div class="success-row"><span>Confirmation</span><span id="successId">Order #UC-XXXX</span></div>
+        <div class="success-row"><span>Pickup at</span><span>6447 W Jefferson Blvd</span></div>
+        <div class="success-row"><span>Method</span><span id="successMethod">In-person</span></div>
+        <div class="success-row"><span>Ready by</span><span id="successTime">—</span></div>
+        <div class="success-row" style="border-bottom: 0;"><span>Total charged</span><span style="font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0; color: var(--rosso);" id="successTotal">$0.00</span></div>
+      </div>
+
+      <div class="mt-8 flex gap-4" style="justify-content: center; flex-wrap: wrap;">
+        <a href="menu.html" class="btn btn-rosso btn-arrow">Order Again</a>
+        <a href="visit.html" class="btn btn-arrow">Get Directions</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-brand">United<span class="text-rosso">.</span></div>
+    <div class="footer-grid mt-8">
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <p style="line-height:1.6;">
+          6447 W Jefferson Blvd<br />
+          Fort Wayne, IN 46804<br />
+          <span class="mono mt-3" style="display:inline-block; color: var(--text-faint);">(260) 399-5148</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="story.html">Story</a></li>
+          <li><a href="visit.html">Visit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Order</h4>
+        <ul>
+          <li><a href="order.html">Online Ordering</a></li>
+          <li><a href="visit.html">Curbside</a></li>
+          <li><a href="visit.html">Catering Inquiry</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://instagram.com/united.coffee" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/unitedcoffee.fw/" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="mailto:hello@unitedcoffee.com">hello@unitedcoffee.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> United Coffee · Fort Wayne, Indiana</span>
+      <span>Site by <a href="https://sweetdreamsmusic.com" target="_blank" rel="noopener">Sweet Dreams Studios</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/main.js" defer></script>
+<script src="scripts/cart.js" defer></script>
+<script src="scripts/order.js" defer></script>
+</body>
+</html>
