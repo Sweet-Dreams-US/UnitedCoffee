@@ -191,40 +191,38 @@
   </div>
 </section>
 
-<!-- DANESI / FEATURE STORY -->
-<section class="section" style="background: var(--bg-2); border-block: 1px solid var(--border); position: relative; overflow: hidden;">
+<!-- DANESI / FEATURE STORY — side-by-side spread, stacks cleanly on mobile -->
+<section class="section" style="background: var(--bg-2); border-block: 1px solid var(--border); position: relative; overflow: hidden; padding: clamp(3rem, 7vw, 6rem) 0;">
   <div class="wrap">
-    <div class="grid-12" style="align-items: center; gap: var(--s-9);">
-      <div style="grid-column: 1 / span 6; position: relative;" data-reveal>
-        <div style="position: relative; aspect-ratio: 4/5; overflow: hidden; border: 1px solid var(--border-strong);">
-          <img src="https://images.unsplash.com/photo-1442550528053-c431ecb55509?auto=format&fit=crop&w=1200&q=85" alt="Roman espresso, Danesi" loading="lazy" style="width:100%; height:100%; object-fit: cover; filter: contrast(1.05) saturate(1.05);" />
-        </div>
-        <div class="mono" style="position: absolute; top: -20px; left: 16px; background: var(--bg-2); padding: 4px 10px; color: var(--rosso);">— Roma, 1905 —</div>
+    <div class="feature-spread">
+      <div class="feature-img" data-reveal>
+        <img src="https://images.unsplash.com/photo-1442550528053-c431ecb55509?auto=format&fit=crop&w=1200&q=85" alt="Roman espresso, Danesi" loading="lazy" />
+        <div class="mono" style="position: absolute; top: -1px; left: 16px; background: var(--bg-2); padding: 4px 10px; color: var(--rosso); transform: translateY(-50%);">— Roma, 1905 —</div>
       </div>
-      <div style="grid-column: 7 / -1;">
+      <div>
         <span class="eyebrow" data-reveal>003 — The Beans</span>
-        <h2 class="h-1 mt-4" data-reveal data-delay="1">
-          From Rome.<br /><span class="editorial text-crema-deep">To Jefferson Boulevard.</span>
+        <h2 class="h-2 mt-4" data-reveal data-delay="1">
+          From Rome.<br /><span class="editorial text-crema-deep">To Jefferson Blvd.</span>
         </h2>
-        <p class="lead mt-6" data-reveal data-delay="2">
-          The Danesi family has been roasting in Rome for over a century. Their blend was perfected in espresso bars where the line is three-deep at 7am and the barista's grandfather worked the same machine. We're the first café in Indiana to pour it.
+        <p class="lead mt-5" data-reveal data-delay="2" style="font-size: 1.1rem;">
+          The Danesi family has been roasting in Rome for over a century — perfected in espresso bars where the line is three-deep at 7am. We're the first café in Indiana to pour it.
         </p>
-        <div class="grid grid-2 mt-8" style="gap: var(--s-6);" data-reveal data-delay="3">
+        <div class="grid grid-2 mt-6" style="gap: var(--s-5);" data-reveal data-delay="3">
           <div>
             <div class="mono text-rosso">Origin</div>
-            <p class="mt-3" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.4rem;">Rome, Italy</p>
+            <p class="mt-2" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.2rem;">Rome, Italy</p>
           </div>
           <div>
-            <div class="mono text-rosso">Family Owned Since</div>
-            <p class="mt-3" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.4rem;">1905</p>
+            <div class="mono text-rosso">Family Owned</div>
+            <p class="mt-2" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.2rem;">Since 1905</p>
           </div>
           <div>
-            <div class="mono text-rosso">Roast Profile</div>
-            <p class="mt-3" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.4rem;">Medium-dark, balanced</p>
+            <div class="mono text-rosso">Roast</div>
+            <p class="mt-2" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.2rem;">Medium-dark</p>
           </div>
           <div>
             <div class="mono text-rosso">Indiana Cafés</div>
-            <p class="mt-3" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.4rem;">One.</p>
+            <p class="mt-2" style="font-family: var(--font-editorial); font-style: italic; font-size: 1.2rem;">One.</p>
           </div>
         </div>
       </div>
