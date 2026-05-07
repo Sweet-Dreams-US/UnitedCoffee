@@ -45,7 +45,7 @@ ul, ol { list-style: none; }
   --gold: #C29B3B;          /* warm gold for accents */
 
   /* Typography */
-  --font-brand: 'Anton', 'Impact', sans-serif;  /* brand wordmark — kept tall + sharp like the original site, applied in the logo lockup treatment */
+  --font-brand: 'Oswald', 'Anton', 'Impact', sans-serif;  /* brand wordmark — condensed like Anton but skinnier strokes (Oswald 400 weight) */
   --font-display: 'Anton', 'Impact', sans-serif;
   --font-editorial: 'Cormorant Garamond', 'Times New Roman', serif;
   --font-body: 'Manrope', system-ui, sans-serif;
@@ -216,8 +216,9 @@ h1, h2, h3, h4 { font-weight: 400; }
 .nav.on-hero.scrolled .nav-brand { color: var(--rosso); }
 .nav-brand {
   font-family: var(--font-brand);
-  font-size: 1.4rem;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  font-size: 1.6rem;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   color: var(--rosso);
   display: flex;
@@ -577,18 +578,19 @@ h1, h2, h3, h4 { font-weight: 400; }
   flex-direction: column;
   align-items: flex-start;
   font-family: var(--font-brand);
+  font-weight: 400;
   color: var(--rosso);
-  line-height: 0.85;
+  line-height: 0.88;
   text-transform: uppercase;
 }
 .logo-lockup .logo-united {
   font-size: 1em;
-  letter-spacing: -0.025em;
+  letter-spacing: 0.005em;
 }
 .logo-lockup .logo-coffee {
   font-size: 0.36em;
   letter-spacing: 0.32em;
-  margin-top: 0.05em;
+  margin-top: 0.08em;
   padding-left: 0.06em;
 }
 .footer-col h4 {
