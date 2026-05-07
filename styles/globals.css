@@ -45,7 +45,7 @@ ul, ol { list-style: none; }
   --gold: #C29B3B;          /* warm gold for accents */
 
   /* Typography */
-  --font-brand: 'Russo One', 'Anton', 'Impact', sans-serif;  /* matches the actual UNITED COFFEE logo wordmark */
+  --font-brand: 'Anton', 'Impact', sans-serif;  /* brand wordmark — kept tall + sharp like the original site, applied in the logo lockup treatment */
   --font-display: 'Anton', 'Impact', sans-serif;
   --font-editorial: 'Cormorant Garamond', 'Times New Roman', serif;
   --font-body: 'Manrope', system-ui, sans-serif;
