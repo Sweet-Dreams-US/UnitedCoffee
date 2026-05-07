@@ -11,7 +11,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Russo+One&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles/globals.css" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F6EFE3'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='Anton,Impact' font-size='80' fill='%23B8362F'%3EU%3C/text%3E%3C/svg%3E" />
 </head>
@@ -44,11 +44,13 @@
         <span style="background: var(--rosso); height: 1px; width: 28px; display: inline-block;"></span>
         Fort Wayne, Indiana &nbsp;/&nbsp; Est. with love &nbsp;/&nbsp; 6447 W Jefferson
       </div>
-      <h1 class="display fade-up" style="font-size: clamp(4rem, 14vw, 14rem); margin-top: 1.5rem; animation-delay:0.4s; color: var(--surface);">
-        <span class="editorial" style="font-size: 0.55em; color: var(--crema); font-style: italic; display:block; margin-bottom: -0.1em; text-transform: none; letter-spacing: 0;">il caffè della famiglia</span>
-        United<br />
-        <span class="text-rosso">Coffee.</span>
-      </h1>
+      <div class="fade-up" style="margin-top: 1.5rem; animation-delay:0.4s;">
+        <div class="editorial" style="font-size: clamp(2rem, 5vw, 3.6rem); color: var(--crema); font-style: italic; margin-bottom: 0.5rem; line-height: 1;">il caffè della famiglia</div>
+        <h1 class="logo-lockup" style="font-size: clamp(4.5rem, 14vw, 14rem); margin: 0;">
+          <span class="logo-united">United</span>
+          <span class="logo-coffee">Coffee</span>
+        </h1>
+      </div>
     </div>
 
     <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); align-items:end; margin-top: 4rem;" class="hero-bottom">
@@ -384,7 +386,10 @@
 <!-- Footer -->
 <footer class="footer">
   <div class="wrap">
-    <div class="footer-brand">United<span class="text-rosso">.</span></div>
+    <div class="logo-lockup footer-brand" style="font-size: clamp(2.8rem, 6vw, 5rem);">
+      <span class="logo-united">United</span>
+      <span class="logo-coffee">Coffee</span>
+    </div>
     <div class="footer-grid mt-8">
       <div class="footer-col">
         <h4>Visit</h4>

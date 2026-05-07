@@ -45,6 +45,7 @@ ul, ol { list-style: none; }
   --gold: #C29B3B;          /* warm gold for accents */
 
   /* Typography */
+  --font-brand: 'Russo One', 'Anton', 'Impact', sans-serif;  /* matches the actual UNITED COFFEE logo wordmark */
   --font-display: 'Anton', 'Impact', sans-serif;
   --font-editorial: 'Cormorant Garamond', 'Times New Roman', serif;
   --font-body: 'Manrope', system-ui, sans-serif;
@@ -208,30 +209,32 @@ h1, h2, h3, h4 { font-weight: 400; }
   border-bottom-color: var(--border);
 }
 .nav.on-hero { color: var(--cream); }
-.nav.on-hero .nav-brand,
 .nav.on-hero .nav-link { color: var(--surface); }
+.nav.on-hero .nav-brand { color: var(--rosso); } /* keep brand red */
 .nav.on-hero.scrolled { color: var(--text); }
-.nav.on-hero.scrolled .nav-brand,
 .nav.on-hero.scrolled .nav-link { color: var(--text); }
+.nav.on-hero.scrolled .nav-brand { color: var(--rosso); }
 .nav-brand {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  letter-spacing: 0.02em;
+  font-family: var(--font-brand);
+  font-size: 1.4rem;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--rosso);
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  line-height: 1;
 }
 .nav-brand::after {
   content: 'FW';
   font-family: var(--font-mono);
-  font-size: 0.625rem;
+  font-size: 0.6rem;
   letter-spacing: 0.2em;
   color: var(--rosso);
   border: 1px solid var(--rosso);
   padding: 2px 5px;
-  margin-top: 4px;
+  margin-top: 2px;
+  font-weight: 400;
 }
 .nav-links {
   display: flex;
@@ -557,10 +560,36 @@ h1, h2, h3, h4 { font-weight: 400; }
 }
 @media (max-width: 800px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
 .footer-brand {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-family: var(--font-brand);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   line-height: 0.9;
-  color: var(--bg);
+  color: var(--rosso);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* ---------- Logo lockup (UNITED stacked over COFFEE, brand red) ----------
+   Use in hero, footer, splash spots — anywhere the full brand identity
+   should appear. Inherits color via currentColor so it adapts to dark
+   backgrounds and rosso sections. */
+.logo-lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-brand);
+  color: var(--rosso);
+  line-height: 0.85;
+  text-transform: uppercase;
+}
+.logo-lockup .logo-united {
+  font-size: 1em;
+  letter-spacing: -0.025em;
+}
+.logo-lockup .logo-coffee {
+  font-size: 0.36em;
+  letter-spacing: 0.32em;
+  margin-top: 0.05em;
+  padding-left: 0.06em;
 }
 .footer-col h4 {
   font-family: var(--font-mono);
