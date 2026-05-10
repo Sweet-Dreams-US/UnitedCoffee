@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — United Coffee</title>
+<meta name="description" content="Demo admin workspace for United Coffee — orders, menu, analytics, accounting, events." />
+<meta name="robots" content="noindex" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Manrope:wght@200;300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Saira:wght@500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles/globals.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232A1810'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='Anton,Impact' font-size='80' fill='%23B8362F'%3EU%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<div class="demo-banner">
+  Demo admin · seeded with mock data · <a href="index.html">view public site</a>
+</div>
+
+<div class="admin-shell">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-brand">
+      <div class="admin-logo">United Coffee</div>
+      <div class="admin-eyebrow">Owner Console</div>
+    </div>
+
+    <nav class="admin-nav" id="adminNav">
+      <button class="admin-nav-btn is-active" data-tab="dashboard">
+        <span>Dashboard</span>
+      </button>
+      <button class="admin-nav-btn" data-tab="orders">
+        <span>Orders</span>
+        <span class="admin-nav-badge" id="ordersBadge">0</span>
+      </button>
+      <button class="admin-nav-btn" data-tab="menu">
+        <span>Menu</span>
+      </button>
+      <button class="admin-nav-btn" data-tab="analytics">
+        <span>Analytics</span>
+      </button>
+      <button class="admin-nav-btn" data-tab="accounting">
+        <span>Accounting</span>
+      </button>
+      <button class="admin-nav-btn" data-tab="events">
+        <span>Events</span>
+      </button>
+      <button class="admin-nav-btn" data-tab="customers">
+        <span>Customers</span>
+      </button>
+      <button class="admin-nav-btn" data-tab="inventory">
+        <span>Inventory</span>
+      </button>
+      <button class="admin-nav-btn" data-tab="settings">
+        <span>Settings</span>
+      </button>
+    </nav>
+
+    <div class="admin-user">
+      <div class="admin-user-avatar">T</div>
+      <div>
+        <div class="admin-user-name">Tony Horani</div>
+        <div class="admin-user-role">Owner</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <main class="admin-content">
+    <section class="admin-tab is-active" data-panel="dashboard" id="panelDashboard"></section>
+    <section class="admin-tab" data-panel="orders" id="panelOrders"></section>
+    <section class="admin-tab" data-panel="menu" id="panelMenu"></section>
+    <section class="admin-tab" data-panel="analytics" id="panelAnalytics"></section>
+    <section class="admin-tab" data-panel="accounting" id="panelAccounting"></section>
+    <section class="admin-tab" data-panel="events" id="panelEvents"></section>
+    <section class="admin-tab" data-panel="customers" id="panelCustomers"></section>
+    <section class="admin-tab" data-panel="inventory" id="panelInventory"></section>
+    <section class="admin-tab" data-panel="settings" id="panelSettings"></section>
+  </main>
+</div>
+
+<script src="scripts/admin.js" defer></script>
+</body>
+</html>
