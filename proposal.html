@@ -551,17 +551,33 @@
     padding-bottom: 2pt;
   }
 
-  /* ───────── PRINT ───────── */
+  /* ───────── PRINT ─────────
+     Four even letter pages:
+       1. Cover  — masthead + hero + hero-rule + letter
+       2. Path One
+       3. Path Two
+       4. Details + Next Steps + Footer
+  */
   @page {
     size: letter;
     margin: 0;
   }
   @media print {
     body { background: var(--cream); }
-    .page { padding: 0.5in 0.6in; max-width: none; }
-    .path { page-break-inside: avoid; }
-    .next-steps { page-break-inside: avoid; }
+    .page { padding: 0.55in 0.6in; max-width: none; }
+    .page::before { display: none; } /* drop the noise overlay for sharper print */
+
+    /* Force page boundaries */
+    .letter { break-after: page; page-break-after: always; }
+    .section-label { break-before: page; page-break-before: always; margin-top: 0; padding-top: 0; }
+    .detail-grid { break-before: page; page-break-before: always; margin-top: 0; padding-top: 0; border-top: 0; }
+
+    /* Keep critical blocks intact */
+    .path { page-break-inside: avoid; break-inside: avoid; }
+    .next-steps { page-break-inside: avoid; break-inside: avoid; }
     .hero { page-break-after: avoid; }
+    .after-launch { page-break-inside: avoid; break-inside: avoid; }
+
     a { color: inherit; }
   }
 
@@ -630,8 +646,8 @@
   <!-- ══════════ INTRO LETTER ══════════ -->
   <section class="letter">
     <p class="salutation">Cari Tony &amp; Marina,</p>
-    <p>Here is what we put together. Two paths forward, each with a website, a full set of new media, and the tools to run the shop.</p>
-    <p>Pick the path that fits where United is right now. The other one stays open — you can step into it whenever you're ready.</p>
+    <p>Two paths. Each one launches United online — website, full media, the tools to run the shop.</p>
+    <p>Pick whichever fits today. The other stays open.</p>
     <p class="sign-off">con cura,<br />the sweet dreams team</p>
   </section>
 
@@ -649,23 +665,23 @@
 
     <p class="built-for">
       <strong>Built for United right out of the gate.</strong>
-      A site that finally matches how the café actually feels — warm Italian editorial, the Horani story, a full photo library, and b-roll video for the homepage and your socials.
+      A site that matches how the café feels. Photos, video, story — all yours.
     </p>
 
     <div class="includes-label">What's included</div>
     <ul class="includes">
-      <li>A custom hand-built website. Fully yours to own — every page, every line of code.</li>
-      <li>A full photo session: interior, exterior, the espresso pull, Liège waffles being topped, Tony &amp; Marina at the counter.</li>
-      <li>B-roll video for the site hero plus ready-cut vertical clips for Instagram and TikTok.</li>
-      <li>A simple admin to update events, hours, and menu items without needing us.</li>
-      <li>Catering and event inquiry forms wired straight to your inbox.</li>
-      <li>Domain setup and SSL handled on our side. Live within weeks of the shoot.</li>
+      <li>Custom hand-built website. Yours to own.</li>
+      <li>Full photo session — interior, drinks, waffles, Tony &amp; Marina.</li>
+      <li>B-roll video for the hero + Instagram/TikTok cuts.</li>
+      <li>Simple admin for events, hours, and menu updates.</li>
+      <li>Catering and event inquiry forms.</li>
+      <li>Domain + SSL handled. Live within weeks of the shoot.</li>
     </ul>
 
     <div class="after-launch">
       <div class="stamp">— After Launch —</div>
       <div class="amount">$30 / month</div>
-      <p>Covers hosting, SSL renewals, security updates, uptime monitoring, and bug fixes on anything we built. Cancel anytime.</p>
+      <p>Hosting, SSL, security, uptime, bug fixes. Cancel anytime.</p>
     </div>
 
   </section>
@@ -683,26 +699,26 @@
     </div>
 
     <p class="built-for">
-      <strong>Built for United when you're ready to run orders, accounting, and the whole café through one place.</strong>
-      Your team logs in on your own site every shift, which keeps traffic on your domain and gives Google more reason to send people your way.
+      <strong>Built for United when you're ready to run the whole café online.</strong>
+      Orders, accounting, customers — one place. On your domain.
     </p>
 
     <div class="includes-label">Everything in Foundation, plus</div>
     <ul class="includes">
-      <li>The full admin workspace you saw in the demo: orders queue, menu management with availability toggles, analytics, P&amp;L breakdown, events, customers, inventory, settings.</li>
-      <li>Online ordering with modifiers, in-person + curbside pickup flows, time-slot logic that respects your hours.</li>
-      <li>Square POS integration — orders placed online ring at the bar like every other ticket.</li>
-      <li>Customer accounts and a built-in loyalty program — regulars who buy 10 lattes get one on the house, automatically.</li>
-      <li>Discounts and promotions you can run from the dashboard (founder's pricing, Liège waffle Wednesdays, you name it).</li>
-      <li>Beans-to-go online store — ship Danesi to your customers who moved away.</li>
-      <li>Live accounting + tax accrual visibility, ready to sync to Xero or QuickBooks.</li>
-      <li>A two-hour training session with you, Marina, and any baristas you want included. Full handoff.</li>
+      <li>Full admin workspace — orders, menu, analytics, P&amp;L, events, customers, inventory.</li>
+      <li>Online ordering with modifiers. In-person + curbside. Time-slot logic.</li>
+      <li>Square POS integration. Online tickets ring at the bar.</li>
+      <li>Customer accounts + built-in loyalty program.</li>
+      <li>Discounts and promotions from the dashboard.</li>
+      <li>Beans-to-go online store. Ship Danesi anywhere.</li>
+      <li>Live accounting + tax accrual. Xero/QuickBooks ready.</li>
+      <li>Two-hour training session with the team. Full handoff.</li>
     </ul>
 
     <div class="after-launch">
       <div class="stamp">— After Launch —</div>
       <div class="amount">$80 / month</div>
-      <p>Everything in Path One coverage, plus database management, payment reliability monitoring, priority response if something breaks during morning rush, and bug fixes on the dashboard and ordering flow.</p>
+      <p>Everything above, plus database, payment monitoring, priority response.</p>
     </div>
 
   </section>
@@ -712,24 +728,24 @@
 
     <div class="detail">
       <h3>Timeline <span class="editorial">— il tempo</span></h3>
-      <p><strong>Foundation Site:</strong> 1 to 3 weeks from kickoff to live. Shoot day is the long lead — once we've got the photos and video, the build moves fast.</p>
-      <p><strong>Operations Site:</strong> 4 to 6 weeks from kickoff to live, depending on Square integration timing and how much menu customization you want.</p>
+      <p><strong>Foundation:</strong> 1–3 weeks from kickoff to live.</p>
+      <p><strong>Operations:</strong> 4–6 weeks from kickoff to live.</p>
     </div>
 
     <div class="detail">
       <h3>Upgrade Path</h3>
-      <p>Start with Foundation, upgrade to Operations any time. You pay the build difference of <strong>$4,700</strong>, plus the time to wire in the backend.</p>
-      <p>Nothing about Foundation goes to waste — every page, photo, and line of code carries forward into Operations.</p>
+      <p>Start Foundation. Move to Operations any time.</p>
+      <p>Build difference: <strong>$4,700</strong>. Nothing goes to waste.</p>
     </div>
 
     <div class="detail">
       <h3>Change Requests</h3>
-      <p>New pages, new features, redesigns, or content rewrites after launch are billed at <strong>$80 per hour</strong>. Quoted up front before any work begins — no surprise invoices.</p>
+      <p><strong>$80/hour</strong>. Quoted up front. No surprise invoices.</p>
     </div>
 
     <div class="detail">
       <h3>Ownership <span class="editorial">— è tuo</span></h3>
-      <p>The site, the photos, the video, the code. Yours. If you ever leave us, you walk away with everything we made together — including the full source.</p>
+      <p>Site. Photos. Video. Code. All yours. Walk away with everything.</p>
     </div>
 
   </div>
@@ -742,8 +758,8 @@
       <span class="italian">due prossime mosse</span>
     </h2>
     <ol>
-      <li>A second meeting to walk through whichever path fits United best — over an espresso at the shop, on us.</li>
-      <li>Get the photo and video shoot on the calendar. Morning light is best, before the rush.</li>
+      <li>A second meeting over espresso, at the shop.</li>
+      <li>Photo + video shoot on the calendar.</li>
     </ol>
   </section>
 
