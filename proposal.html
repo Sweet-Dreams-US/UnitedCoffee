@@ -8,22 +8,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Saira:wght@500&display=swap" rel="stylesheet" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F6EFE3'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='Anton,Impact' font-size='80' fill='%23B8362F'%3EU%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23FFFFFF'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='Anton,Impact' font-size='80' fill='%23B8362F'%3EU%3C/text%3E%3C/svg%3E" />
 <style>
   :root {
-    /* White paper proposal — cream tokens flipped to white; warm accents
-       preserved for typography (rosso, espresso, crema) */
-    --cream: #FFFFFF;       /* page = white paper */
-    --cream-deep: #F4F1EA;  /* subtle warm gray for the "after launch" tray */
-    --paper: #FFFFFF;       /* unused now — kept for API compat */
-    --espresso: #2A1810;    /* primary text */
+    /* TYPE COLORS ONLY — no surface tokens. The page is white. */
+    --espresso: #2A1810;
     --espresso-soft: #5A4636;
     --espresso-faint: #8A7660;
     --crema: #B8865D;
     --crema-deep: #8B5E37;
-    --rosso: #B8362F;       /* the Italian red — accent + emphasis */
-    --rosso-deep: #8E2620;
-    --rule: rgba(42, 24, 16, 0.22); /* slightly stronger so rules read on white */
+    --rosso: #B8362F;
+    --rule: rgba(42, 24, 16, 0.22);
   }
 
   * { box-sizing: border-box; }
@@ -31,7 +26,6 @@
   html, body {
     margin: 0;
     padding: 0;
-    background: var(--cream);
     color: var(--espresso);
     font-family: "Manrope", "Cormorant Garamond", Georgia, serif;
     font-weight: 400;
@@ -60,8 +54,6 @@
     max-width: 8.5in;
     margin: 0 auto;
     padding: 0.65in 0.75in;
-    background: var(--cream);
-    position: relative;
   }
 
   /* ───────── MASTHEAD ───────── */
@@ -73,7 +65,6 @@
     border-bottom: 1px solid var(--rule);
     gap: 24pt;
   }
-
   .masthead .brand {
     font-family: "Anton", Impact, sans-serif;
     text-transform: uppercase;
@@ -82,7 +73,6 @@
     line-height: 0.95;
     color: var(--espresso);
   }
-
   .masthead .brand small {
     display: block;
     font-family: "Cormorant Garamond", serif;
@@ -94,7 +84,6 @@
     color: var(--espresso-soft);
     margin-top: 8pt;
   }
-
   .masthead .meta {
     text-align: right;
     font-size: 9.5pt;
@@ -102,7 +91,6 @@
     line-height: 1.7;
     flex-shrink: 0;
   }
-
   .masthead .meta .label {
     font-family: "JetBrains Mono", monospace;
     text-transform: uppercase;
@@ -121,7 +109,6 @@
     align-items: end;
     gap: 32pt;
   }
-
   .hero h1 {
     font-family: "Anton", Impact, sans-serif;
     text-transform: uppercase;
@@ -143,7 +130,6 @@
     margin-bottom: 6pt;
     line-height: 1;
   }
-
   .hero .lede {
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
@@ -163,9 +149,6 @@
     padding-top: 14pt;
     border-top: 1px solid var(--rule);
   }
-
-  /* United Coffee brand lockup (UNITED stacked over COFFEE, matching the
-     public site) — used as the "client mark" in the hero rule */
   .client-mark {
     display: inline-flex;
     flex-direction: column;
@@ -186,7 +169,6 @@
     letter-spacing: 0.32em;
     margin-top: 1pt;
   }
-
   .hero-rule .tags {
     font-family: "JetBrains Mono", monospace;
     text-transform: uppercase;
@@ -251,7 +233,6 @@
     page-break-inside: avoid;
     margin-bottom: 0.4in;
   }
-
   .path-head {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -259,7 +240,6 @@
     gap: 20pt;
     margin-bottom: 14pt;
   }
-
   .path-head h2 {
     font-family: "Anton", Impact, sans-serif;
     text-transform: uppercase;
@@ -269,7 +249,6 @@
     margin: 0;
     color: var(--espresso);
   }
-
   .path-head h2 small {
     display: block;
     font-family: "Cormorant Garamond", serif;
@@ -281,7 +260,6 @@
     color: var(--crema-deep);
     margin-top: 6pt;
   }
-
   .price {
     font-family: "Anton", Impact, sans-serif;
     font-size: 44pt;
@@ -290,7 +268,6 @@
     text-align: right;
     letter-spacing: 0.01em;
   }
-
   .price small {
     display: block;
     font-family: "JetBrains Mono", monospace;
@@ -347,7 +324,6 @@
     padding: 0;
     margin: 0 0 14pt;
   }
-
   ul.includes li {
     padding: 7pt 0 7pt 24pt;
     position: relative;
@@ -366,13 +342,12 @@
     font-size: 10pt;
   }
 
+  /* AFTER-LAUNCH TRAY — no fill, just a left rosso rule */
   .after-launch {
-    background: var(--cream-deep);
-    padding: 16pt 20pt;
+    padding: 14pt 0 14pt 20pt;
     margin-top: 16pt;
     border-left: 3px solid var(--rosso);
   }
-
   .after-launch .stamp {
     font-family: "JetBrains Mono", monospace;
     text-transform: uppercase;
@@ -381,7 +356,6 @@
     color: var(--rosso);
     margin-bottom: 6pt;
   }
-
   .after-launch .amount {
     font-family: "Anton", Impact, sans-serif;
     font-size: 22pt;
@@ -390,7 +364,6 @@
     margin-bottom: 6pt;
     letter-spacing: 0.01em;
   }
-
   .after-launch p {
     margin: 0;
     font-size: 10.5pt;
@@ -407,7 +380,6 @@
     padding-top: 26pt;
     border-top: 1px solid var(--rule);
   }
-
   .detail h3 {
     font-family: "Anton", Impact, sans-serif;
     text-transform: uppercase;
@@ -422,7 +394,6 @@
     font-size: 12pt;
     color: var(--crema-deep);
   }
-
   .detail p {
     margin: 0 0 10pt;
     font-size: 11pt;
@@ -431,14 +402,12 @@
   }
   .detail p strong { color: var(--espresso); font-weight: 600; }
 
-  /* ───────── NEXT STEPS ───────── */
+  /* ───────── NEXT STEPS — light variant, no dark panel ───────── */
   .next-steps {
     margin-top: 0.45in;
-    padding: 28pt 30pt;
-    background: var(--espresso);
-    color: var(--cream);
+    padding: 24pt 0 0;
+    border-top: 4px solid var(--rosso);
   }
-
   .next-steps .stamp {
     font-family: "JetBrains Mono", monospace;
     text-transform: uppercase;
@@ -447,7 +416,6 @@
     color: var(--rosso);
     margin-bottom: 10pt;
   }
-
   .next-steps h2 {
     font-family: "Anton", Impact, sans-serif;
     text-transform: uppercase;
@@ -455,7 +423,7 @@
     font-size: 30pt;
     line-height: 0.95;
     margin: 0 0 18pt;
-    color: var(--cream);
+    color: var(--espresso);
   }
   .next-steps h2 .italian {
     display: block;
@@ -464,24 +432,23 @@
     text-transform: none;
     letter-spacing: 0;
     font-size: 16pt;
-    color: var(--crema);
+    color: var(--crema-deep);
     margin-top: 4pt;
   }
-
   .next-steps ol {
     margin: 0;
     padding-left: 0;
     list-style: none;
     counter-reset: step;
   }
-
   .next-steps ol li {
     counter-increment: step;
     padding: 10pt 0 10pt 40pt;
     position: relative;
     font-size: 11.5pt;
     line-height: 1.55;
-    border-bottom: 1px solid rgba(246, 239, 227, 0.15);
+    border-bottom: 1px solid var(--rule);
+    color: var(--espresso);
   }
   .next-steps ol li:last-child { border-bottom: none; }
   .next-steps ol li::before {
@@ -506,7 +473,6 @@
     gap: 24pt;
     align-items: end;
   }
-
   .footer .signature .anton {
     font-size: 26pt;
     letter-spacing: 0.08em;
@@ -520,7 +486,6 @@
     font-family: "Cormorant Garamond", serif;
     font-style: italic;
   }
-
   .footer .cta {
     text-align: right;
     font-size: 9.5pt;
@@ -538,32 +503,20 @@
     padding-bottom: 2pt;
   }
 
-  /* ───────── PRINT ─────────
-     Four even letter pages:
-       1. Cover  — masthead + hero + hero-rule + letter
-       2. Path One
-       3. Path Two
-       4. Details + Next Steps + Footer
-  */
+  /* ───────── PRINT ───────── */
   @page {
     size: letter;
     margin: 0;
   }
   @media print {
-    body { background: var(--cream); }
     .page { padding: 0.55in 0.6in; max-width: none; }
-
-    /* Force page boundaries */
     .letter { break-after: page; page-break-after: always; }
     .section-label { break-before: page; page-break-before: always; margin-top: 0; padding-top: 0; }
     .detail-grid { break-before: page; page-break-before: always; margin-top: 0; padding-top: 0; border-top: 0; }
-
-    /* Keep critical blocks intact */
     .path { page-break-inside: avoid; break-inside: avoid; }
     .next-steps { page-break-inside: avoid; break-inside: avoid; }
     .hero { page-break-after: avoid; }
     .after-launch { page-break-inside: avoid; break-inside: avoid; }
-
     a { color: inherit; }
   }
 
