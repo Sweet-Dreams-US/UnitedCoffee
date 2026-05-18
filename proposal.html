@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sweet Dreams · Proposal for United Coffee</title>
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Saira:wght@500&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23F6EFE3'/%3E%3Ctext x='50' y='72' text-anchor='middle' font-family='Anton,Impact' font-size='80' fill='%23B8362F'%3EU%3C/text%3E%3C/svg%3E" />
+<style>
+  :root {
+    /* United Coffee palette — same tokens as the public site, recolored
+       slightly for paper-document warmth */
+    --cream: #F6EFE3;       /* page paper */
+    --cream-deep: #EFE5D1;  /* secondary surface (the "after launch" tray) */
+    --paper: #FBF4E6;       /* milk-white surface (callouts) */
+    --espresso: #2A1810;    /* primary text */
+    --espresso-soft: #5A4636;
+    --espresso-faint: #8A7660;
+    --crema: #B8865D;
+    --crema-deep: #8B5E37;
+    --rosso: #B8362F;       /* the Italian red — accent + emphasis */
+    --rosso-deep: #8E2620;
+    --rule: rgba(42, 24, 16, 0.18);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--espresso);
+    font-family: "Manrope", "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    font-size: 11.5pt;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .anton {
+    font-family: "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: 400;
+  }
+
+  .editorial {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .page {
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.65in 0.75in;
+    background: var(--cream);
+    position: relative;
+  }
+
+  /* Subtle paper grain (same idea as public site) */
+  .page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.16 0 0 0 0 0.09 0 0 0 0 0.06 0 0 0 0.30 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: 0.35;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    z-index: 0;
+  }
+  .page > * { position: relative; z-index: 1; }
+
+  /* ───────── MASTHEAD ───────── */
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 0.4in;
+    border-bottom: 1px solid var(--rule);
+    gap: 24pt;
+  }
+
+  .masthead .brand {
+    font-family: "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 32pt;
+    line-height: 0.95;
+    color: var(--espresso);
+  }
+
+  .masthead .brand small {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 10pt;
+    color: var(--espresso-soft);
+    margin-top: 8pt;
+  }
+
+  .masthead .meta {
+    text-align: right;
+    font-size: 9.5pt;
+    color: var(--espresso-soft);
+    line-height: 1.7;
+    flex-shrink: 0;
+  }
+
+  .masthead .meta .label {
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 7.5pt;
+    color: var(--rosso);
+    display: block;
+    margin-bottom: 4pt;
+  }
+
+  /* ───────── HERO ───────── */
+  .hero {
+    padding: 0.55in 0 0.35in;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 32pt;
+  }
+
+  .hero h1 {
+    font-family: "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: 62pt;
+    line-height: 0.9;
+    margin: 0;
+    color: var(--espresso);
+  }
+  .hero h1 .rosso { color: var(--rosso); }
+  .hero h1 .italian {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 22pt;
+    color: var(--crema-deep);
+    margin-bottom: 6pt;
+    line-height: 1;
+  }
+
+  .hero .lede {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 13pt;
+    line-height: 1.4;
+    color: var(--espresso-soft);
+    max-width: 3.2in;
+    margin: 0;
+    text-align: right;
+  }
+
+  .hero-rule {
+    display: flex;
+    align-items: center;
+    gap: 18pt;
+    margin-top: 0.3in;
+    padding-top: 14pt;
+    border-top: 1px solid var(--rule);
+  }
+
+  /* United Coffee brand lockup (UNITED stacked over COFFEE, matching the
+     public site) — used as the "client mark" in the hero rule */
+  .client-mark {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: "Saira", "Anton", Impact, sans-serif;
+    font-weight: 500;
+    color: var(--rosso);
+    line-height: 0.92;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .client-mark .united {
+    font-size: 22pt;
+    letter-spacing: -0.01em;
+  }
+  .client-mark .coffee {
+    font-size: 7.5pt;
+    letter-spacing: 0.32em;
+    margin-top: 1pt;
+  }
+
+  .hero-rule .tags {
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 8pt;
+    color: var(--espresso-soft);
+    border-left: 1px solid var(--rule);
+    padding-left: 18pt;
+  }
+  .hero-rule .tags span { margin: 0 6pt; }
+  .hero-rule .tags span:first-child { margin-left: 0; }
+  .hero-rule .tags .dot { color: var(--rosso); }
+
+  /* ───────── INTRO LETTER ───────── */
+  .letter {
+    padding: 0.5in 0 0.3in;
+    max-width: 5.6in;
+  }
+  .letter p {
+    margin: 0 0 12pt;
+    font-size: 12pt;
+    line-height: 1.7;
+    color: var(--espresso);
+  }
+  .letter .salutation {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 16pt;
+    color: var(--crema-deep);
+    margin-bottom: 14pt;
+  }
+  .letter .sign-off {
+    margin-top: 20pt;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--espresso-soft);
+    font-size: 12pt;
+  }
+
+  /* ───────── PATH SECTIONS ───────── */
+  .section-label {
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 9pt;
+    color: var(--rosso);
+    margin: 0.45in 0 8pt;
+    padding-top: 14pt;
+    border-top: 2px solid var(--espresso);
+    display: flex;
+    align-items: center;
+    gap: 10pt;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .path {
+    page-break-inside: avoid;
+    margin-bottom: 0.4in;
+  }
+
+  .path-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 20pt;
+    margin-bottom: 14pt;
+  }
+
+  .path-head h2 {
+    font-family: "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: 34pt;
+    line-height: 0.95;
+    margin: 0;
+    color: var(--espresso);
+  }
+
+  .path-head h2 small {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-size: 13pt;
+    color: var(--crema-deep);
+    margin-top: 6pt;
+  }
+
+  .price {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 44pt;
+    line-height: 0.9;
+    color: var(--rosso);
+    text-align: right;
+    letter-spacing: 0.01em;
+  }
+
+  .price small {
+    display: block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8pt;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--espresso-soft);
+    margin-top: 6pt;
+    text-align: right;
+  }
+
+  .built-for {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    color: var(--espresso-soft);
+    margin-bottom: 16pt;
+    font-size: 13pt;
+    line-height: 1.5;
+    padding-left: 16pt;
+    border-left: 2px solid var(--rosso);
+  }
+  .built-for strong {
+    font-weight: 500;
+    color: var(--espresso);
+    font-style: normal;
+    font-family: "Manrope", sans-serif;
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 6pt;
+  }
+
+  .includes-label {
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 8.5pt;
+    color: var(--espresso);
+    margin: 20pt 0 8pt;
+    display: flex;
+    align-items: center;
+    gap: 10pt;
+  }
+  .includes-label::before {
+    content: '';
+    width: 18pt;
+    height: 1px;
+    background: var(--rosso);
+  }
+
+  ul.includes {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14pt;
+  }
+
+  ul.includes li {
+    padding: 7pt 0 7pt 24pt;
+    position: relative;
+    font-size: 11pt;
+    line-height: 1.55;
+    border-bottom: 1px dotted var(--rule);
+    color: var(--espresso);
+  }
+  ul.includes li:last-child { border-bottom: none; }
+  ul.includes li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    top: 7pt;
+    color: var(--rosso);
+    font-size: 10pt;
+  }
+
+  .after-launch {
+    background: var(--cream-deep);
+    padding: 16pt 20pt;
+    margin-top: 16pt;
+    border-left: 3px solid var(--rosso);
+  }
+
+  .after-launch .stamp {
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 8pt;
+    color: var(--rosso);
+    margin-bottom: 6pt;
+  }
+
+  .after-launch .amount {
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 22pt;
+    color: var(--espresso);
+    line-height: 1;
+    margin-bottom: 6pt;
+    letter-spacing: 0.01em;
+  }
+
+  .after-launch p {
+    margin: 0;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: var(--espresso-soft);
+  }
+
+  /* ───────── DETAIL BLOCKS ───────── */
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28pt;
+    margin-top: 0.35in;
+    padding-top: 26pt;
+    border-top: 1px solid var(--rule);
+  }
+
+  .detail h3 {
+    font-family: "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 14pt;
+    color: var(--espresso);
+    margin: 0 0 10pt;
+    padding-bottom: 7pt;
+    border-bottom: 1px solid var(--rule);
+  }
+  .detail h3 .editorial {
+    font-size: 12pt;
+    color: var(--crema-deep);
+  }
+
+  .detail p {
+    margin: 0 0 10pt;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: var(--espresso);
+  }
+  .detail p strong { color: var(--espresso); font-weight: 600; }
+
+  /* ───────── NEXT STEPS ───────── */
+  .next-steps {
+    margin-top: 0.45in;
+    padding: 28pt 30pt;
+    background: var(--espresso);
+    color: var(--cream);
+  }
+
+  .next-steps .stamp {
+    font-family: "JetBrains Mono", monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 9pt;
+    color: var(--rosso);
+    margin-bottom: 10pt;
+  }
+
+  .next-steps h2 {
+    font-family: "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    font-size: 30pt;
+    line-height: 0.95;
+    margin: 0 0 18pt;
+    color: var(--cream);
+  }
+  .next-steps h2 .italian {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 16pt;
+    color: var(--crema);
+    margin-top: 4pt;
+  }
+
+  .next-steps ol {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .next-steps ol li {
+    counter-increment: step;
+    padding: 10pt 0 10pt 40pt;
+    position: relative;
+    font-size: 11.5pt;
+    line-height: 1.55;
+    border-bottom: 1px solid rgba(246, 239, 227, 0.15);
+  }
+  .next-steps ol li:last-child { border-bottom: none; }
+  .next-steps ol li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 10pt;
+    font-family: "Anton", Impact, sans-serif;
+    font-size: 18pt;
+    color: var(--rosso);
+    width: 26pt;
+    text-align: center;
+  }
+
+  /* ───────── FOOTER ───────── */
+  .footer {
+    margin-top: 0.4in;
+    padding-top: 20pt;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24pt;
+    align-items: end;
+  }
+
+  .footer .signature .anton {
+    font-size: 26pt;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    color: var(--espresso);
+  }
+  .footer .signature p {
+    margin: 8pt 0 0;
+    font-size: 9.5pt;
+    color: var(--espresso-soft);
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+  }
+
+  .footer .cta {
+    text-align: right;
+    font-size: 9.5pt;
+    color: var(--espresso-soft);
+    line-height: 1.7;
+  }
+  .footer .cta a {
+    color: var(--espresso);
+    text-decoration: none;
+    font-family: "Anton", Impact, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 11pt;
+    border-bottom: 2px solid var(--rosso);
+    padding-bottom: 2pt;
+  }
+
+  /* ───────── PRINT ───────── */
+  @page {
+    size: letter;
+    margin: 0;
+  }
+  @media print {
+    body { background: var(--cream); }
+    .page { padding: 0.5in 0.6in; max-width: none; }
+    .path { page-break-inside: avoid; }
+    .next-steps { page-break-inside: avoid; }
+    .hero { page-break-after: avoid; }
+    a { color: inherit; }
+  }
+
+  /* ───────── MOBILE ───────── */
+  @media screen and (max-width: 700px) {
+    .page { padding: 0.4in 0.4in; }
+    .masthead { flex-direction: column; gap: 14pt; }
+    .masthead .meta { text-align: left; }
+    .hero { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 44pt; }
+    .hero .lede { text-align: left; max-width: 100%; }
+    .hero-rule { flex-direction: column; align-items: flex-start; gap: 14pt; }
+    .hero-rule .tags { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 12pt; }
+    .path-head { grid-template-columns: 1fr; }
+    .price { text-align: left; }
+    .price small { text-align: left; }
+    .detail-grid { grid-template-columns: 1fr; }
+    .footer { grid-template-columns: 1fr; }
+    .footer .cta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ══════════ MASTHEAD ══════════ -->
+  <header class="masthead">
+    <div>
+      <div class="brand">
+        Sweet Dreams
+        <small>media · marketing · software · strategy</small>
+      </div>
+    </div>
+    <div class="meta">
+      <span class="label">— Proposal —</span>
+      No. 0002 / May 2026<br />
+      Prepared for United Coffee<br />
+      6447 W Jefferson Blvd, Fort Wayne
+    </div>
+  </header>
+
+  <!-- ══════════ HERO ══════════ -->
+  <section class="hero">
+    <h1>
+      <span class="italian">due strade</span>
+      Two paths<br />
+      <span class="rosso">forward.</span>
+    </h1>
+    <p class="lede">Two ways to bring United online. Choose the one that fits where the café is right now.</p>
+  </section>
+
+  <div class="hero-rule">
+    <div class="client-mark">
+      <span class="united">United</span>
+      <span class="coffee">Coffee</span>
+    </div>
+    <div class="tags">
+      <span>danesi espresso</span><span class="dot">✦</span>
+      <span>liège waffles</span><span class="dot">✦</span>
+      <span>il caffè della famiglia</span><span class="dot">✦</span>
+      <span>west jefferson</span>
+    </div>
+  </div>
+
+  <!-- ══════════ INTRO LETTER ══════════ -->
+  <section class="letter">
+    <p class="salutation">Cari Tony &amp; Marina,</p>
+    <p>Here is what we put together. Two paths forward, each with a website, a full set of new media, and the tools to run the shop.</p>
+    <p>Pick the path that fits where United is right now. The other one stays open — you can step into it whenever you're ready.</p>
+    <p class="sign-off">con cura,<br />the sweet dreams team</p>
+  </section>
+
+  <!-- ══════════ PATH ONE ══════════ -->
+  <div class="section-label">— Path One —</div>
+  <section class="path">
+
+    <div class="path-head">
+      <h2>
+        Foundation Site
+        <small>the website and the media.</small>
+      </h2>
+      <div class="price">$3,700<small>One-time build</small></div>
+    </div>
+
+    <p class="built-for">
+      <strong>Built for United right out of the gate.</strong>
+      A site that finally matches how the café actually feels — warm Italian editorial, the Horani story, a full photo library, and b-roll video for the homepage and your socials.
+    </p>
+
+    <div class="includes-label">What's included</div>
+    <ul class="includes">
+      <li>A custom hand-built website. Fully yours to own — every page, every line of code.</li>
+      <li>A full photo session: interior, exterior, the espresso pull, Liège waffles being topped, Tony &amp; Marina at the counter.</li>
+      <li>B-roll video for the site hero plus ready-cut vertical clips for Instagram and TikTok.</li>
+      <li>A simple admin to update events, hours, and menu items without needing us.</li>
+      <li>Catering and event inquiry forms wired straight to your inbox.</li>
+      <li>Domain setup and SSL handled on our side. Live within weeks of the shoot.</li>
+    </ul>
+
+    <div class="after-launch">
+      <div class="stamp">— After Launch —</div>
+      <div class="amount">$30 / month</div>
+      <p>Covers hosting, SSL renewals, security updates, uptime monitoring, and bug fixes on anything we built. Cancel anytime.</p>
+    </div>
+
+  </section>
+
+  <!-- ══════════ PATH TWO ══════════ -->
+  <div class="section-label">— Path Two —</div>
+  <section class="path">
+
+    <div class="path-head">
+      <h2>
+        Operations Site
+        <small>everything in Path One, plus the system to run the business.</small>
+      </h2>
+      <div class="price">$8,400<small>One-time build</small></div>
+    </div>
+
+    <p class="built-for">
+      <strong>Built for United when you're ready to run orders, accounting, and the whole café through one place.</strong>
+      Your team logs in on your own site every shift, which keeps traffic on your domain and gives Google more reason to send people your way.
+    </p>
+
+    <div class="includes-label">Everything in Foundation, plus</div>
+    <ul class="includes">
+      <li>The full admin workspace you saw in the demo: orders queue, menu management with availability toggles, analytics, P&amp;L breakdown, events, customers, inventory, settings.</li>
+      <li>Online ordering with modifiers, in-person + curbside pickup flows, time-slot logic that respects your hours.</li>
+      <li>Square POS integration — orders placed online ring at the bar like every other ticket.</li>
+      <li>Customer accounts and a built-in loyalty program — regulars who buy 10 lattes get one on the house, automatically.</li>
+      <li>Discounts and promotions you can run from the dashboard (founder's pricing, Liège waffle Wednesdays, you name it).</li>
+      <li>Beans-to-go online store — ship Danesi to your customers who moved away.</li>
+      <li>Live accounting + tax accrual visibility, ready to sync to Xero or QuickBooks.</li>
+      <li>A two-hour training session with you, Marina, and any baristas you want included. Full handoff.</li>
+    </ul>
+
+    <div class="after-launch">
+      <div class="stamp">— After Launch —</div>
+      <div class="amount">$80 / month</div>
+      <p>Everything in Path One coverage, plus database management, payment reliability monitoring, priority response if something breaks during morning rush, and bug fixes on the dashboard and ordering flow.</p>
+    </div>
+
+  </section>
+
+  <!-- ══════════ DETAILS ══════════ -->
+  <div class="detail-grid">
+
+    <div class="detail">
+      <h3>Timeline <span class="editorial">— il tempo</span></h3>
+      <p><strong>Foundation Site:</strong> 1 to 3 weeks from kickoff to live. Shoot day is the long lead — once we've got the photos and video, the build moves fast.</p>
+      <p><strong>Operations Site:</strong> 4 to 6 weeks from kickoff to live, depending on Square integration timing and how much menu customization you want.</p>
+    </div>
+
+    <div class="detail">
+      <h3>Upgrade Path</h3>
+      <p>Start with Foundation, upgrade to Operations any time. You pay the build difference of <strong>$4,700</strong>, plus the time to wire in the backend.</p>
+      <p>Nothing about Foundation goes to waste — every page, photo, and line of code carries forward into Operations.</p>
+    </div>
+
+    <div class="detail">
+      <h3>Change Requests</h3>
+      <p>New pages, new features, redesigns, or content rewrites after launch are billed at <strong>$80 per hour</strong>. Quoted up front before any work begins — no surprise invoices.</p>
+    </div>
+
+    <div class="detail">
+      <h3>Ownership <span class="editorial">— è tuo</span></h3>
+      <p>The site, the photos, the video, the code. Yours. If you ever leave us, you walk away with everything we made together — including the full source.</p>
+    </div>
+
+  </div>
+
+  <!-- ══════════ NEXT STEPS ══════════ -->
+  <section class="next-steps">
+    <div class="stamp">— From Here —</div>
+    <h2>
+      Two next moves.
+      <span class="italian">due prossime mosse</span>
+    </h2>
+    <ol>
+      <li>A second meeting to walk through whichever path fits United best — over an espresso at the shop, on us.</li>
+      <li>Get the photo and video shoot on the calendar. Morning light is best, before the rush.</li>
+    </ol>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer class="footer">
+    <div class="signature">
+      <div class="anton">Sweet Dreams</div>
+      <p>fort wayne, indiana · made for United with care</p>
+    </div>
+    <div class="cta">
+      <a href="https://SweetDreams.us">SweetDreams.us</a><br />
+      <span style="display:inline-block; margin-top:8pt;">Questions? Just reply to the email this came with.</span>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
